@@ -1,0 +1,136 @@
+# depslib dependency file v1.0
+1687026699 source:c:\users\user\desktop\licentacb\server\main.cpp
+	<iostream>
+	<string>
+	<winsock2.h>
+	<windows.h>
+	<mysql.h>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\mysql_driver.h
+	"cppconn/driver.h"
+	<memory>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\driver.h
+	"connection.h"
+	"build_config.h"
+	"callback.h"
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\connection.h
+	<map>
+	"build_config.h"
+	"warning.h"
+	"sqlstring.h"
+	"variant.h"
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\build_config.h
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\warning.h
+	<stdexcept>
+	<string>
+	<memory>
+	"sqlstring.h"
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\sqlstring.h
+	<string>
+	<algorithm>
+	"build_config.h"
+	<iostream>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\variant.h
+	<string>
+	<map>
+	<list>
+	<algorithm>
+	<typeinfo>
+	"build_config.h"
+	"sqlstring.h"
+	"exception.h"
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\exception.h
+	"build_config.h"
+	<stdexcept>
+	<string>
+	<memory>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\callback.h
+	"sqlstring.h"
+	<functional>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\mysql_connection.h
+	"cppconn/connection.h"
+	<memory>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\resultset.h
+	"config.h"
+	<list>
+	<map>
+	<iostream>
+	"sqlstring.h"
+	"resultset_metadata.h"
+
+1679585222 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\config.h
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\resultset_metadata.h
+	"sqlstring.h"
+	"datatype.h"
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\datatype.h
+
+1679581968 c:\program files\mysql\connector c++ 8.0\include\jdbc\cppconn\statement.h
+	"config.h"
+	"resultset.h"
+	<string>
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\mysql.h
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+	<sys/types.h>
+	<windows.h>
+	<winsock2.h>
+	"field_types.h"
+	"my_list.h"
+	"mysql_com.h"
+	"mysql/client_plugin.h"
+	"mysql_version.h"
+	"mysql_time.h"
+	"errmsg.h"
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\field_types.h
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\my_list.h
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\mysql_com.h
+	<stdbool.h>
+	<stdint.h>
+	"my_command.h"
+	"my_compress.h"
+	"my_io.h"
+	"mysql/components/services/bits/my_io_bits.h"
+	<stdbool.h>
+	"mysql/udf_registration_types.h"
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\my_command.h
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\my_compress.h
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\mysql\udf_registration_types.h
+	<stdbool.h>
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\mysql\client_plugin.h
+	<stdarg.h>
+	<stdlib.h>
+	"plugin_auth_common.h"
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\mysql\plugin_auth_common.h
+	<windows.h>
+
+1678984834 c:\program files\mysql\mysql server 8.0\include\mysql_version.h
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\mysql_time.h
+
+1678980158 c:\program files\mysql\mysql server 8.0\include\errmsg.h
+
