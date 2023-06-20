@@ -134,3 +134,13 @@
 
 1678980158 c:\program files\mysql\mysql server 8.0\include\errmsg.h
 
+1687175809 source:c:\users\user\documents\github\licenta\licenta\server\main.cpp
+	<iostream>
+	<string>
+	<winsock2.h>
+	<windows.h>
+	<mysql.h>
+	<cstring>
+	<string>
+	<cctype>
+

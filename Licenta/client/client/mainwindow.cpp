@@ -3,9 +3,11 @@
 #include <QTcpSocket>
 #include <QHostAddress>
 #include <QDebug>
+#include <QString>
+#include <QStringList>
 
-
-
+// Create a TCP socket
+QTcpSocket tcpSocket;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,12 +22,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_pushButton_clicked()
+void conectareServer()
 {
-    // Create a TCP socket
-    QTcpSocket tcpSocket;
-
     // Connect to the server
     QString serverAddress = "192.168.1.5"; // Server IP address
     quint16 serverPort = 8888; // Server port number
@@ -37,18 +35,20 @@ void MainWindow::on_pushButton_clicked()
     {
         qDebug() << "Failed to connect to the server.";
     }
-
-    QString dataToSend =ui->comboBox->currentText() + "," + ui->lineEdit->text() + "," + ui->lineEdit_2->text() + "," + ui->lineEdit_3->text(); // Obține valorile din QLineEdit-uri și concatenează-le
+}
+void trimiteLaServer(QString dataToSend)
+{
     // Send data to the server
     tcpSocket.write(dataToSend.toUtf8());
-
     // Wait until the data is written
     if (!tcpSocket.waitForBytesWritten())
     {
         qDebug() << "Failed to send data to the server.";
-       // return a.exec();
     }
 
+}
+QString raspunsServer()
+{
     // Read data from the server
     if (!tcpSocket.waitForReadyRead())
     {
@@ -58,13 +58,60 @@ void MainWindow::on_pushButton_clicked()
 
     QByteArray responseData = tcpSocket.readAll();
     QString receivedData = QString::fromUtf8(responseData);
-    ui->raspunsServerLabel->setText(receivedData);
-
     qDebug() << "Received data from server:" << receivedData;
-
+    return receivedData;
+}
+void inchideConexiunea()
+{
     // Close the connection
     tcpSocket.disconnectFromHost();
+}
 
+void MainWindow::on_pushButton_clicked()
+{
+    QString dataToSend =ui->listaRute->currentText() + "," + ui->lineEdit->text() + "," + ui->lineEdit_2->text() + "," + ui->lineEdit_3->text(); // Obține valorile din QLineEdit-uri și concatenează-le
+    trimiteLaServer(dataToSend);
+    ui->raspunsServerLabel->setText(raspunsServer());
+    inchideConexiunea();
+}
+void MainWindow::populateComboBox()
+{
+    ui->listaRute->clear();
+    conectareServer();
+    QString dataToSend = "cereRute";
+    trimiteLaServer(dataToSend);
+
+    QString datePrimite = raspunsServer();
+    QStringList tokens = datePrimite.split("\n");
+      for (const QString& token : tokens)
+    {
+        if(token!="\n")
+        ui->listaRute->addItem(token);
+    }
+      inchideConexiunea();
+}
+void MainWindow::on_listaRute_activated(int index)
+{
+    int verif = ui->listaRute->findText("RUTE");
+
+    if (verif != -1) {
+        populateComboBox();
+    } else {
+        QString rutaAleasa = ui->listaRute->currentText();
+        QString dataToSend="detalii" + rutaAleasa;
+        conectareServer();
+        trimiteLaServer(dataToSend);
+        QString datePrimite = raspunsServer();
+        QString oraplecare = datePrimite.mid(0,5);
+        QString oradestinatie = datePrimite.mid(5,5);
+        QString nrvagoane = datePrimite.at(datePrimite.length()-4);
+        QString vagoanecl1 = datePrimite.at(datePrimite.length()-3);
+        QString vagoanecl2 = datePrimite.at(datePrimite.length()-2);
+        QString pretbilet = datePrimite.mid(10,datePrimite.length()-14);
+        ui->detalii_cursa->setText("Detalii cursa aleasa:\nOra plecare: " + oraplecare + "\nOra destinatie: " + oradestinatie + "\nPret bilet intreg:" + pretbilet + "\nNumar vagoane: " + nrvagoane + "\nNumar vagoane clasa 1: " + vagoanecl1 + "\nNumar vagoane clasa 2: " + vagoanecl2);
+        inchideConexiunea();
+
+    }
 
 }
 

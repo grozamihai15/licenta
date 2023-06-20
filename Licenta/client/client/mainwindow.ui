@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="listaRute">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -23,19 +23,12 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="currentText">
+     <string>RUTE</string>
+    </property>
     <item>
      <property name="text">
-      <string>Timisoara-Bucuresti</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Timisoara-Cluj</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Timisoara-Targu Jiu</string>
+      <string>RUTE</string>
      </property>
     </item>
    </widget>
@@ -154,6 +147,22 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="detalii_cursa">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>70</y>
+      <width>421</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
