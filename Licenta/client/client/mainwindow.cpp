@@ -76,7 +76,43 @@ void MainWindow::on_pushButton_clicked()
     conectareServer();
     QString dataToSend =IDTren + "," + ui->lineEdit->text() + "," + ui->lineEdit_2->text() + "," + ui->lineEdit_3->text() + "," + ui->clasaBiletBox->currentText();
     trimiteLaServer(dataToSend);
-    ui->raspunsServerLabel->setText(raspunsServer());
+
+    QString datePrimite = raspunsServer();
+    int poz=0;
+    QStringList tokens = datePrimite.split("_");
+    QString nrvagon;
+    QString tipvagon;
+    QString clasavagon;
+    QString compartiment;
+    QString loc;
+    QString afis;
+    for (const QString& token : tokens)
+    {
+        poz++;
+        if(token!="_")
+        {
+            if(poz==1)
+                nrvagon=token;
+            else if(poz==2)
+                tipvagon=token;
+            else if(poz==3)
+                clasavagon=token;
+            else if(poz==4)
+                compartiment=token;
+            else if(poz==5)
+                loc=token;
+
+        }
+
+
+
+    }
+     afis=afis+"Clasa:"+clasavagon+" Vagon:"+nrvagon+" Loc:"+compartiment+loc+"\0";
+    ui->raspunsServerLabel->setText(afis);
+
+
+
+
     inchideConexiunea();
 }
 void MainWindow::populateComboBox()
