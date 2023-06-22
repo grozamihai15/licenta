@@ -15,12 +15,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     raspunsServerLabel = new QLabel(this);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+QString IDTren;
+
 
 void conectareServer()
 {
@@ -69,7 +73,8 @@ void inchideConexiunea()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QString dataToSend =ui->listaRute->currentText() + "," + ui->lineEdit->text() + "," + ui->lineEdit_2->text() + "," + ui->lineEdit_3->text(); // Obține valorile din QLineEdit-uri și concatenează-le
+    conectareServer();
+    QString dataToSend =IDTren + "," + ui->lineEdit->text() + "," + ui->lineEdit_2->text() + "," + ui->lineEdit_3->text() + "," + ui->clasaBiletBox->currentText();
     trimiteLaServer(dataToSend);
     ui->raspunsServerLabel->setText(raspunsServer());
     inchideConexiunea();
@@ -98,7 +103,8 @@ void MainWindow::on_listaRute_activated(int index)
         populateComboBox();
     } else {
         QString rutaAleasa = ui->listaRute->currentText();
-        QString dataToSend="detalii" + rutaAleasa;
+        IDTren = rutaAleasa.mid(0,4);
+        QString dataToSend="detalii" + IDTren;
         conectareServer();
         trimiteLaServer(dataToSend);
         QString datePrimite = raspunsServer();

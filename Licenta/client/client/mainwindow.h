@@ -20,12 +20,13 @@ public:
 private slots:
     void on_pushButton_clicked();
     void populateComboBox();
-
     void on_listaRute_activated(int index);
 
 private:
     Ui::MainWindow *ui;
     QLabel *raspunsServerLabel;
     QComboBox *listaRute;
+    QComboBox *clasaBiletBox;
+
 };
 #endif // MAINWINDOW_H
