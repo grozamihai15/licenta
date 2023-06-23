@@ -7,6 +7,7 @@
 #include <string>
 #include <cctype>
 #include <cstdlib>
+#include <thread>
 
 using namespace std;
 
@@ -353,7 +354,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                     }
                     else
                     {
-                         if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
+                        if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
                         {
                             liber++;
                         }
@@ -675,7 +676,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                     }
                     else
                     {
-                         if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
+                        if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
                         {
                             liber++;
                         }
@@ -936,65 +937,65 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                         else if(pensionar>0)
                             tipC=3;
 
-                            if(strcmp(mStatus[nrvagon][nrcompartiment][5],"LIBER")==0)
+                        if(strcmp(mStatus[nrvagon][nrcompartiment][5],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_5";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_5";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][1],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][1],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_1";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_1";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][6],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][6],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_6";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_6";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][4],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][4],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_4";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_4";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][3],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][3],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_3";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_3";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
                     }
                     else
                     {
-                         if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
+                        if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
                         {
                             liber++;
                         }
@@ -1087,61 +1088,61 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                         else if(pensionar>0)
                             tipC=3;
 
-                            if(strcmp(mStatus[nrvagon][nrcompartiment][6],"LIBER")==0)
+                        if(strcmp(mStatus[nrvagon][nrcompartiment][6],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_6";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_6";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][2],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_2";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_2";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][3],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][3],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_3";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_3";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][5],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][5],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_5";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_5";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
-                            else if(strcmp(mStatus[nrvagon][nrcompartiment][4],"LIBER")==0)
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
+                        else if(strcmp(mStatus[nrvagon][nrcompartiment][4],"LIBER")==0)
+                        {
+                            string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_4";
+                            string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
+                            if (mysql_query(conn,comanda.c_str()))
                             {
-                                string idloc = to_string(nrvagon) + "_" + to_string(mVagon[nrvagon].tip) + "_" + to_string(mVagon[nrvagon].clasa) + "_" + to_string(nrcompartiment) + "_4";
-                                string comanda = "UPDATE ir11 SET status = '" + b + "' WHERE id_loc = '"  + idloc + "';" ;
-                                if (mysql_query(conn,comanda.c_str()))
-                                {
-                                    finish_with_error(conn);
-                                }
-                                strcpy(buffer,idloc.c_str());
-                                return 1;
+                                finish_with_error(conn);
                             }
+                            strcpy(buffer,idloc.c_str());
+                            return 1;
+                        }
 
                     }
                 }
@@ -1152,70 +1153,33 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
     strcpy(buffer,"NU MAI SUNT LOCURI!");
     return 0;
 }
-int main()
+
+
+
+
+
+
+
+void clientHandler(SOCKET clientSocket)
 {
-    WSADATA wsaData;
-    SOCKET serverSocket, clientSocket;
-    SOCKADDR_IN serverAddress, clientAddress;
-    int clientAddressSize = sizeof(clientAddress);
     char buffer[5024];
     memset(buffer, 0, sizeof(buffer));
 
-    while(1)
+    // Receive message from client
+    int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
+    if (bytesRead == SOCKET_ERROR)
     {
-        // Initializarea Winsock
-        if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
-        {
-            std::cerr << "Eroare la initializarea Winsock." << std::endl;
-            return -1;
-        }
+        std::cerr << "Error receiving message from client." << std::endl;
+        closesocket(clientSocket);
+        return;
+    }
 
-        // Crearea socketului server
-        if ((serverSocket = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
-        {
-            std::cerr << "Eroare la crearea socketului." << std::endl;
-            return -1;
-        }
+    // Process the received message
+    // ...
 
-        // Setarea informațiilor despre server
-        serverAddress.sin_family = AF_INET;
-        serverAddress.sin_port = htons(8888);
-        serverAddress.sin_addr.s_addr = INADDR_ANY;
+    std::cout << "Message received from client: " << buffer << std::endl;
 
-        // Asocierea adresei serverului cu socketul
-        if (bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR)
-        {
-            std::cerr << "Eroare la asocierea adresei serverului cu socketul." << std::endl;
-            return -1;
-        }
-
-        // Ascultarea conexiunilor de la clienți
-        if (listen(serverSocket, 1) == SOCKET_ERROR)
-        {
-            std::cerr << "Eroare la ascultarea conexiunilor de la clienți." << std::endl;
-            return -1;
-        }
-
-        std::cout << "Serverul este pornit si asteapta conexiuni de la clienti..." << std::endl;
-
-        // Așteptarea unei conexiuni de la un client
-        if ((clientSocket = accept(serverSocket, (struct sockaddr*)&clientAddress, &clientAddressSize)) == INVALID_SOCKET)
-        {
-            std::cerr << "Eroare la acceptarea conexiunii de la client." << std::endl;
-            return -1;
-        }
-
-        std::cout << "Un client s-a conectat." << std::endl;
-
-        // Primirea mesajului de la client
-        int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
-        if (bytesRead == SOCKET_ERROR)
-        {
-            std::cerr << "Eroare la primirea mesajului de la client." << std::endl;
-            return -1;
-        }
-//===============================================================================================
-        bazadedate();
+       bazadedate();
         std::cout << "Mesaj primit de la client: " << buffer << std::endl;
         if(!strcmp(buffer,"cereRute"))
         {
@@ -1300,21 +1264,92 @@ int main()
 
         inchideBD();
 
-//===============================================================================================
-        // Trimite un răspuns la client
-        std::string response = buffer;
-        if (send(clientSocket, response.c_str(), response.length(), 0) == SOCKET_ERROR)
+
+
+
+    // Prepare the response
+    std::string response = buffer;
+
+    // Send response back to the client
+    if (send(clientSocket, response.c_str(), response.length(), 0) == SOCKET_ERROR)
+    {
+        std::cerr << "Error sending response to client." << std::endl;
+    }
+
+    // Close the client socket
+    closesocket(clientSocket);
+}
+
+int main()
+{
+    WSADATA wsaData;
+    SOCKET serverSocket, clientSocket;
+    SOCKADDR_IN serverAddress, clientAddress;
+    int clientAddressSize = sizeof(clientAddress);
+
+    // Initialize Winsock
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
+    {
+        std::cerr << "Error initializing Winsock." << std::endl;
+        return -1;
+    }
+
+     // Create server socket
+    if ((serverSocket = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
+    {
+        std::cerr << "Error creating server socket." << std::endl;
+        WSACleanup();
+        return -1;
+    }
+
+    // Setarea informațiilor despre server
+    serverAddress.sin_family = AF_INET;
+    serverAddress.sin_port = htons(8888);
+    serverAddress.sin_addr.s_addr = INADDR_ANY;
+
+     // Bind server address to the socket
+    if (bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress)) == SOCKET_ERROR)
+    {
+        std::cerr << "Error binding server address to the socket." << std::endl;
+        closesocket(serverSocket);
+        WSACleanup();
+        return -1;
+    }
+
+    // Start listening for client connections
+    if (listen(serverSocket, SOMAXCONN) == SOCKET_ERROR)
+    {
+        std::cerr << "Error listening for client connections." << std::endl;
+        closesocket(serverSocket);
+        WSACleanup();
+        return -1;
+    }
+
+        std::cout << "Serverul este pornit si asteapta conexiuni de la clienti..." << std::endl;
+
+        while (true)
+    {
+        // Accept a new client connection
+        if ((clientSocket = accept(serverSocket, (struct sockaddr*)&clientAddress, &clientAddressSize)) == INVALID_SOCKET)
         {
-            std::cerr << "Eroare la trimiterea răspunsului la client." << std::endl;
+            std::cerr << "Error accepting client connection." << std::endl;
+            closesocket(serverSocket);
+            WSACleanup();
             return -1;
         }
 
-        // Închiderea socketului și Winsock
-        memset(buffer, 0, sizeof(buffer));
-        closesocket(clientSocket);
-        closesocket(serverSocket);
-        WSACleanup();
+        std::cout << "Client connected." << std::endl;
 
+        // Create a new thread to handle the client
+        std::thread clientThread(clientHandler, clientSocket);
+        clientThread.detach();  // Detach the thread to run independently
     }
+
+    // Close the server socket and cleanup Winsock
+    closesocket(serverSocket);
+    WSACleanup();
+
     return 0;
+
+
 }
