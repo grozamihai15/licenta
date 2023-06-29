@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>724</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,43 +32,30 @@
      </property>
     </item>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>140</y>
-      <width>113</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>430</y>
+      <x>480</x>
+      <y>380</y>
       <width>171</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>Tipareste biletele</string>
+     <string>Cauta loc</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>120</y>
+      <y>140</y>
       <width>111</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Nr bilete normale</string>
+     <string>Tip bilet</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -84,64 +71,12 @@
      <string>Ruta</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>190</y>
-      <width>113</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>170</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nr bilete student</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>240</y>
-      <width>113</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>220</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nr bilete pensionar</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="raspunsServerLabel">
     <property name="geometry">
      <rect>
       <x>50</x>
       <y>350</y>
-      <width>431</width>
+      <width>311</width>
       <height>131</height>
      </rect>
     </property>
@@ -169,7 +104,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>300</y>
+      <y>250</y>
       <width>81</width>
       <height>22</height>
      </rect>
@@ -189,7 +124,7 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>280</y>
+      <y>220</y>
       <width>49</width>
       <height>16</height>
      </rect>
@@ -198,13 +133,38 @@
      <string>Clasa</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="tipbiletBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>160</y>
+      <width>111</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Bilet normal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bilet student</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bilet pensionar</string>
+     </property>
+    </item>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>724</width>
      <height>22</height>
     </rect>
    </property>

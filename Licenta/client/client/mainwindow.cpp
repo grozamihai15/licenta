@@ -74,7 +74,7 @@ void inchideConexiunea()
 void MainWindow::on_pushButton_clicked()
 {
     conectareServer();
-    QString dataToSend =IDTren + "," + ui->lineEdit->text() + "," + ui->lineEdit_2->text() + "," + ui->lineEdit_3->text() + "," + ui->clasaBiletBox->currentText();
+    QString dataToSend =IDTren + "," + ui->tipbiletBox->currentText() + "," + ui->clasaBiletBox->currentText();
     trimiteLaServer(dataToSend);
 
     QString datePrimite = raspunsServer();

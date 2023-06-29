@@ -27,6 +27,7 @@ private:
     QLabel *raspunsServerLabel;
     QComboBox *listaRute;
     QComboBox *clasaBiletBox;
+    QComboBox *tipbiletBox;
 
 };
 #endif // MAINWINDOW_H

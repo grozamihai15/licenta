@@ -4,7 +4,6 @@
 #include <windows.h>
 #include <mysql.h>
 #include <cstring>
-#include <string>
 #include <cctype>
 #include <cstdlib>
 #include <thread>
@@ -39,11 +38,11 @@ void bazadedate()
     conn = mysql_init(NULL);
     if (mysql_real_connect(conn,"localhost","root","parola@licenta123","trenuri",0,NULL,0) !=0)
     {
-        cout << "Succesfully  Connected to MySQL database" << endl;
+        cout << "Conexiunea la baza de date s-a realizat cu succes!" << endl;
     }
     else
     {
-        cout<< "not connect";
+        cout<< "Nu s-a putut conecta la baza de date!";
     }
 }
 void get_DB_id_nume(char &buffer)
@@ -1169,18 +1168,14 @@ void clientHandler(SOCKET clientSocket)
     int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
     if (bytesRead == SOCKET_ERROR)
     {
-        std::cerr << "Error receiving message from client." << std::endl;
+        std::cerr << "Eroare la primirea mesajului de la client!" << std::endl;
         closesocket(clientSocket);
         return;
     }
 
-    // Process the received message
-    // ...
-
-    std::cout << "Message received from client: " << buffer << std::endl;
-
-       bazadedate();
         std::cout << "Mesaj primit de la client: " << buffer << std::endl;
+
+        bazadedate();
         if(!strcmp(buffer,"cereRute"))
         {
             memset(buffer, 0, sizeof(buffer));
@@ -1192,7 +1187,7 @@ void clientHandler(SOCKET clientSocket)
                 lastPosition++;
             }
 
-            cout<<lastPosition<<endl;
+
             buffer[lastPosition-1]='\0';
         }
         else if(buffer[0]=='d' and buffer[1]=='e' and buffer[2]=='t')
@@ -1205,15 +1200,15 @@ void clientHandler(SOCKET clientSocket)
                 idTren[poz]=buffer[i];
                 poz++;
             }
-            cout<<buffer<<" "<<idTren<<endl;
+
             memset(buffer, 0, sizeof(buffer));
             get_DB_detalii(buffer,idTren);
-            cout<<buffer<<endl;
+
         }
         else
         {
             int nrv=0,poz=0,i=0;
-            char id[10],bnormale[10],bstudenti[10],bpensionari[10],clasaBilet[10];
+            char id[10],bil[100],clasaBilet[10];
             while(buffer[i]!='\0')
             {
 
@@ -1226,31 +1221,30 @@ void clientHandler(SOCKET clientSocket)
                 }
                 else if(nrv==1)
                 {
-                    bnormale[poz]=buffer[i];
+                    bil[poz]=buffer[i];
                     poz++;
                 }
                 else if(nrv==2)
-                {
-                    bstudenti[poz]=buffer[i];
-                    poz++;
-                }
-                else if(nrv==3)
-                {
-                    bpensionari[poz]=buffer[i];
-                    poz++;
-                }
-                else if(nrv==4)
                 {
                     clasaBilet[poz]=buffer[i];
                     poz++;
                 }
                 i++;
             }
+            int bn,bs,bp;
+            if(strcmp(bil,"Bilet normal")==0)
+            {
+                bn=1;
+            }
+            else if(strcmp(bil,"Bilet student")==0)
+            {
+                bs=1;
+            }
+            else if(strcmp(bil,"Bilet pensionar")==0)
+            {
+                bp=1;
+            }
 
-            cout<<"ID= "<<id<<" Bilete normale: "<<bnormale<<" Bilete studenti: "<<bstudenti<<" Bilete pensionari: "<<bpensionari<<" Clasa: "<<clasaBilet<<endl;
-            int bn=atoi(bnormale);
-            int bs=atoi(bstudenti);
-            int bp=atoi(bpensionari);
             int cb=clasaBilet[6]-'0';
             memset(buffer, 0, sizeof(buffer));
             preiaBilete(id,buffer);
@@ -1259,8 +1253,6 @@ void clientHandler(SOCKET clientSocket)
             rezultat=impartireBilete(bn,bs,bp,cb,buffer);
 
         }
-
-        cout<<buffer<<endl;
 
         inchideBD();
 
@@ -1274,6 +1266,10 @@ void clientHandler(SOCKET clientSocket)
     if (send(clientSocket, response.c_str(), response.length(), 0) == SOCKET_ERROR)
     {
         std::cerr << "Error sending response to client." << std::endl;
+    }
+    else
+    {
+        cout<<"Mesajul trimis catre client:"<<endl<<buffer<<endl<<endl;
     }
 
     // Close the client socket
@@ -1338,7 +1334,7 @@ int main()
             return -1;
         }
 
-        std::cout << "Client connected." << std::endl;
+        std::cout << "Client conectat." << std::endl;
 
         // Create a new thread to handle the client
         std::thread clientThread(clientHandler, clientSocket);
