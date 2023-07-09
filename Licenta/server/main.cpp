@@ -302,6 +302,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][5],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -313,6 +314,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][1],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -324,6 +326,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][6],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -335,6 +338,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][4],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -346,6 +350,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][3],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -456,6 +461,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][6],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -467,6 +473,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][2],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -478,6 +485,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][3],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -489,6 +497,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][5],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -500,6 +509,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][4],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -624,6 +634,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][5],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -635,6 +646,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][1],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -646,6 +658,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][6],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -657,6 +670,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][4],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -668,6 +682,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][3],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -778,6 +793,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][6],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -789,6 +805,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][2],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -800,6 +817,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][3],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -811,6 +829,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][5],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -822,6 +841,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                                 {
                                     finish_with_error(conn);
                                 }
+                                strcpy(mStatus[nrvagon][nrcompartiment][4],b.c_str());
                                 strcpy(buffer,idloc.c_str());
                                 return 1;
                             }
@@ -944,6 +964,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][5],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -955,6 +976,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][1],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -966,6 +988,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][6],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -977,6 +1000,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][4],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -988,6 +1012,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][3],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -1095,6 +1120,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][6],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -1106,6 +1132,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][2],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -1117,6 +1144,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][3],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -1128,6 +1156,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][5],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -1139,6 +1168,7 @@ int impartireBilete(int bn,int bs,int bp,int cb,char *buffer)
                             {
                                 finish_with_error(conn);
                             }
+                            strcpy(mStatus[nrvagon][nrcompartiment][4],b.c_str());
                             strcpy(buffer,idloc.c_str());
                             return 1;
                         }
@@ -1231,7 +1261,7 @@ void clientHandler(SOCKET clientSocket)
                 }
                 i++;
             }
-            int bn,bs,bp;
+            int bn=0,bs=0,bp=0;
             if(strcmp(bil,"Bilet normal")==0)
             {
                 bn=1;
